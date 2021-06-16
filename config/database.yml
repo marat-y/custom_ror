@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: 'custom_ror'
+
+test:
+  <<: *default
+  database: 'custom_ror_test'
+
+production:
+  <<: *default
+  database: 'custom_ror'
