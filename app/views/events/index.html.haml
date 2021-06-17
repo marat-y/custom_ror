@@ -1,0 +1,37 @@
+%h1= t('views.events.index.title')
+
+%table
+  %thead
+    %tr
+      %th= Event.human_attribute_name(:title)
+      %th= Event.human_attribute_name(:description)
+      %th= Event.human_attribute_name(:location)
+      %th= Event.human_attribute_name(:starttime)
+      %th= Event.human_attribute_name(:endtime)
+      %th= Event.human_attribute_name(:organizeremail)
+      %th= Event.human_attribute_name(:organizertelegram)
+      %th= Event.human_attribute_name(:link)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.title
+        %td= event.description
+        %td= event.location
+        %td= event.starttime
+        %td= event.endtime
+        %td= event.organizeremail
+        %td= event.organizertelegram
+        %td= event.link
+        %td= link_to t('common.show'), event
+        %td= link_to t('common.edit'), edit_event_path(event)
+        %td= link_to t('common.destroy'), event, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to t('views.events.index.new'), new_event_path
+
+= paginate @events

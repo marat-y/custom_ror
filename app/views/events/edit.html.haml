@@ -1,0 +1,7 @@
+%h1= t('views.events.edit.title')
+
+= render 'form'
+
+= link_to t('common.show'), @event
+\|
+= link_to t('common.back'), events_path

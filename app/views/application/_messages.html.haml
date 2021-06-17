@@ -1,0 +1,9 @@
+#messages
+  - if alert
+    #flash_alert.alert.alert-danger
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+      %div=alert
+  - if notice
+    .alert.alert-success
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+      %div=notice
