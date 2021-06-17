@@ -20,6 +20,9 @@ en:
     edit: "Edit"
     destroy: "Destroy"
     back: "Back"
+    sign_in: "Sign in"
+    sign_out: "Sign out"
+    sign_up: "Sign up"
   activerecord:
     attributes:
       event:
