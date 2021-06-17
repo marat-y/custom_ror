@@ -1,0 +1,25 @@
+= simple_form_for @event do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %ul
+        - @event.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.input :title
+  .field
+    = f.input :description
+  .field
+    = f.input :location
+  .field
+    = f.input :starttime
+  .field
+    = f.input :endtime
+  .field
+    = f.input :organizeremail
+  .field
+    = f.input :organizertelegram
+  .field
+    = f.input :link
+  .actions
+    = f.submit t('common.save')
