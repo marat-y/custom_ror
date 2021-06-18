@@ -9,7 +9,7 @@ module EventHelpers
   end
 
   def update_event(event, title: nil)
-    visit '/events'
+    visit_events
     within_row event do
       click_link 'Edit'
     end
@@ -21,7 +21,30 @@ module EventHelpers
   end
 
   def destroy_event(event)
-    visit '/events'
+    visit_events
+    within_row event do
+      accept_confirm do
+        click_link 'Destroy'
+      end
+    end
+
+    expect(page).to have_text 'Event was successfully destroyed.'
+  end
+
+  def update_admin_event(event, title: nil)
+    visit_admin_events
+    within_row event do
+      click_link 'Edit'
+    end
+    fill_in 'Title', with: title if title
+    click_button 'Save'
+
+    expect(page).to have_text 'Event was successfully updated.'
+    expect(page).to have_text "Event #{title}" if title
+  end
+
+  def destroy_admin_event(event)
+    visit_admin_events
     within_row event do
       accept_confirm do
         click_link 'Destroy'

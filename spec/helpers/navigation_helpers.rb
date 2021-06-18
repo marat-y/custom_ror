@@ -1,4 +1,11 @@
 module NavigationHelpers
+  def as_admin(admin)
+    sign_in admin
+    result = yield
+    sign_out admin
+    result
+  end
+
   def as_user(user)
     sign_in user
     result = yield
@@ -8,6 +15,10 @@ module NavigationHelpers
 
   def visit_events
     visit '/events'
+  end
+
+  def visit_admin_events
+    visit '/admin/events'
   end
 
   def find_proper_row(text)

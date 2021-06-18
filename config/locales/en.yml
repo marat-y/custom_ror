@@ -1,5 +1,20 @@
 en:
   views:
+    admin:
+      events:
+        create:
+          success: "Event was successfully created."
+        update:
+          success: "Event was successfully updated."
+        destroy:
+          success: "Event was successfully destroyed."
+        index:
+          title: "Events"
+          new: "New event"
+        edit:
+          title: "Editing event"
+        new:
+          title: "New event"
     events:
       create:
         success: "Event was successfully created."
@@ -23,6 +38,7 @@ en:
     sign_in: "Sign in"
     sign_out: "Sign out"
     sign_up: "Sign up"
+    admin: "Admin"
   activerecord:
     attributes:
       event:
