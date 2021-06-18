@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User', type: :feature do
+describe 'Authorization', type: :feature do
   include AuthHelpers
 
   before do

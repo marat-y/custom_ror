@@ -12,6 +12,9 @@ gem 'kaminari'
 gem 'postgresql'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+gem 'rubocop', '~> 1.4.2', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
 gem 'sass-rails', '>= 6'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
@@ -41,10 +44,4 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
   gem 'simplecov', require: false
   gem 'webdrivers'
-end
-
-group :tools do
-  gem 'rubocop', '~> 1.4.2', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
 end
